@@ -1,4 +1,3 @@
-/*
 # API Automation Testing Boilerplate
 
 ## Setup
