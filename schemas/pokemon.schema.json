@@ -1,0 +1,1197 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "base_experience": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "is_default": {
+      "type": "boolean"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "weight": {
+      "type": "integer"
+    },
+    "abilities": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "is_hidden": {
+              "type": "boolean"
+            },
+            "slot": {
+              "type": "integer"
+            },
+            "ability": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            }
+          },
+          "required": [
+            "is_hidden",
+            "slot",
+            "ability"
+          ]
+        }
+      ]
+    },
+    "forms": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "url"
+          ]
+        }
+      ]
+    },
+    "game_indices": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "game_index": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            }
+          },
+          "required": [
+            "game_index",
+            "version"
+          ]
+        }
+      ]
+    },
+    "held_items": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "item": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            },
+            "version_details": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "rarity": {
+                      "type": "integer"
+                    },
+                    "version": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "url"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "rarity",
+                    "version"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "item",
+            "version_details"
+          ]
+        }
+      ]
+    },
+    "location_area_encounters": {
+      "type": "string"
+    },
+    "moves": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "move": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            },
+            "version_group_details": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "level_learned_at": {
+                      "type": "integer"
+                    },
+                    "version_group": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "url"
+                      ]
+                    },
+                    "move_learn_method": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "url"
+                      ]
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "level_learned_at",
+                    "version_group",
+                    "move_learn_method",
+                    "order"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "move",
+            "version_group_details"
+          ]
+        }
+      ]
+    },
+    "species": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url"
+      ]
+    },
+    "sprites": {
+      "type": "object",
+      "properties": {
+        "back_default": {
+          "type": "string"
+        },
+        "back_female": {
+          "type": "null"
+        },
+        "back_shiny": {
+          "type": "string"
+        },
+        "back_shiny_female": {
+          "type": "null"
+        },
+        "front_default": {
+          "type": "string"
+        },
+        "front_female": {
+          "type": "null"
+        },
+        "front_shiny": {
+          "type": "string"
+        },
+        "front_shiny_female": {
+          "type": "null"
+        },
+        "other": {
+          "type": "object",
+          "properties": {
+            "dream_world": {
+              "type": "object",
+              "properties": {
+                "front_default": {
+                  "type": "string"
+                },
+                "front_female": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "front_default",
+                "front_female"
+              ]
+            },
+            "home": {
+              "type": "object",
+              "properties": {
+                "front_default": {
+                  "type": "string"
+                },
+                "front_female": {
+                  "type": "null"
+                },
+                "front_shiny": {
+                  "type": "string"
+                },
+                "front_shiny_female": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "front_default",
+                "front_female",
+                "front_shiny",
+                "front_shiny_female"
+              ]
+            },
+            "official-artwork": {
+              "type": "object",
+              "properties": {
+                "front_default": {
+                  "type": "string"
+                },
+                "front_shiny": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "front_default",
+                "front_shiny"
+              ]
+            },
+            "showdown": {
+              "type": "object",
+              "properties": {
+                "back_default": {
+                  "type": "string"
+                },
+                "back_female": {
+                  "type": "null"
+                },
+                "back_shiny": {
+                  "type": "string"
+                },
+                "back_shiny_female": {
+                  "type": "null"
+                },
+                "front_default": {
+                  "type": "string"
+                },
+                "front_female": {
+                  "type": "null"
+                },
+                "front_shiny": {
+                  "type": "string"
+                },
+                "front_shiny_female": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "back_default",
+                "back_female",
+                "back_shiny",
+                "back_shiny_female",
+                "front_default",
+                "front_female",
+                "front_shiny",
+                "front_shiny_female"
+              ]
+            }
+          },
+          "required": [
+            "dream_world",
+            "home",
+            "official-artwork",
+            "showdown"
+          ]
+        },
+        "versions": {
+          "type": "object",
+          "properties": {
+            "generation-i": {
+              "type": "object",
+              "properties": {
+                "red-blue": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_gray": {
+                      "type": "string"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_gray": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_gray",
+                    "front_default",
+                    "front_gray"
+                  ]
+                },
+                "yellow": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_gray": {
+                      "type": "string"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_gray": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_gray",
+                    "front_default",
+                    "front_gray"
+                  ]
+                }
+              },
+              "required": [
+                "red-blue",
+                "yellow"
+              ]
+            },
+            "generation-ii": {
+              "type": "object",
+              "properties": {
+                "crystal": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_shiny",
+                    "front_default",
+                    "front_shiny"
+                  ]
+                },
+                "gold": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_shiny",
+                    "front_default",
+                    "front_shiny"
+                  ]
+                },
+                "silver": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_shiny",
+                    "front_default",
+                    "front_shiny"
+                  ]
+                }
+              },
+              "required": [
+                "crystal",
+                "gold",
+                "silver"
+              ]
+            },
+            "generation-iii": {
+              "type": "object",
+              "properties": {
+                "emerald": {
+                  "type": "object",
+                  "properties": {
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "front_default",
+                    "front_shiny"
+                  ]
+                },
+                "firered-leafgreen": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_shiny",
+                    "front_default",
+                    "front_shiny"
+                  ]
+                },
+                "ruby-sapphire": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_shiny",
+                    "front_default",
+                    "front_shiny"
+                  ]
+                }
+              },
+              "required": [
+                "emerald",
+                "firered-leafgreen",
+                "ruby-sapphire"
+              ]
+            },
+            "generation-iv": {
+              "type": "object",
+              "properties": {
+                "diamond-pearl": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_female": {
+                      "type": "null"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "back_shiny_female": {
+                      "type": "null"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    },
+                    "front_shiny_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_female",
+                    "back_shiny",
+                    "back_shiny_female",
+                    "front_default",
+                    "front_female",
+                    "front_shiny",
+                    "front_shiny_female"
+                  ]
+                },
+                "heartgold-soulsilver": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_female": {
+                      "type": "null"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "back_shiny_female": {
+                      "type": "null"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    },
+                    "front_shiny_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_female",
+                    "back_shiny",
+                    "back_shiny_female",
+                    "front_default",
+                    "front_female",
+                    "front_shiny",
+                    "front_shiny_female"
+                  ]
+                },
+                "platinum": {
+                  "type": "object",
+                  "properties": {
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_female": {
+                      "type": "null"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "back_shiny_female": {
+                      "type": "null"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    },
+                    "front_shiny_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "back_default",
+                    "back_female",
+                    "back_shiny",
+                    "back_shiny_female",
+                    "front_default",
+                    "front_female",
+                    "front_shiny",
+                    "front_shiny_female"
+                  ]
+                }
+              },
+              "required": [
+                "diamond-pearl",
+                "heartgold-soulsilver",
+                "platinum"
+              ]
+            },
+            "generation-v": {
+              "type": "object",
+              "properties": {
+                "black-white": {
+                  "type": "object",
+                  "properties": {
+                    "animated": {
+                      "type": "object",
+                      "properties": {
+                        "back_default": {
+                          "type": "string"
+                        },
+                        "back_female": {
+                          "type": "null"
+                        },
+                        "back_shiny": {
+                          "type": "string"
+                        },
+                        "back_shiny_female": {
+                          "type": "null"
+                        },
+                        "front_default": {
+                          "type": "string"
+                        },
+                        "front_female": {
+                          "type": "null"
+                        },
+                        "front_shiny": {
+                          "type": "string"
+                        },
+                        "front_shiny_female": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "back_default",
+                        "back_female",
+                        "back_shiny",
+                        "back_shiny_female",
+                        "front_default",
+                        "front_female",
+                        "front_shiny",
+                        "front_shiny_female"
+                      ]
+                    },
+                    "back_default": {
+                      "type": "string"
+                    },
+                    "back_female": {
+                      "type": "null"
+                    },
+                    "back_shiny": {
+                      "type": "string"
+                    },
+                    "back_shiny_female": {
+                      "type": "null"
+                    },
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    },
+                    "front_shiny_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "animated",
+                    "back_default",
+                    "back_female",
+                    "back_shiny",
+                    "back_shiny_female",
+                    "front_default",
+                    "front_female",
+                    "front_shiny",
+                    "front_shiny_female"
+                  ]
+                }
+              },
+              "required": [
+                "black-white"
+              ]
+            },
+            "generation-vi": {
+              "type": "object",
+              "properties": {
+                "omegaruby-alphasapphire": {
+                  "type": "object",
+                  "properties": {
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    },
+                    "front_shiny_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "front_default",
+                    "front_female",
+                    "front_shiny",
+                    "front_shiny_female"
+                  ]
+                },
+                "x-y": {
+                  "type": "object",
+                  "properties": {
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    },
+                    "front_shiny_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "front_default",
+                    "front_female",
+                    "front_shiny",
+                    "front_shiny_female"
+                  ]
+                }
+              },
+              "required": [
+                "omegaruby-alphasapphire",
+                "x-y"
+              ]
+            },
+            "generation-vii": {
+              "type": "object",
+              "properties": {
+                "icons": {
+                  "type": "object",
+                  "properties": {
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "front_default",
+                    "front_female"
+                  ]
+                },
+                "ultra-sun-ultra-moon": {
+                  "type": "object",
+                  "properties": {
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    },
+                    "front_shiny": {
+                      "type": "string"
+                    },
+                    "front_shiny_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "front_default",
+                    "front_female",
+                    "front_shiny",
+                    "front_shiny_female"
+                  ]
+                }
+              },
+              "required": [
+                "icons",
+                "ultra-sun-ultra-moon"
+              ]
+            },
+            "generation-viii": {
+              "type": "object",
+              "properties": {
+                "icons": {
+                  "type": "object",
+                  "properties": {
+                    "front_default": {
+                      "type": "string"
+                    },
+                    "front_female": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "front_default",
+                    "front_female"
+                  ]
+                }
+              },
+              "required": [
+                "icons"
+              ]
+            }
+          },
+          "required": [
+            "generation-i",
+            "generation-ii",
+            "generation-iii",
+            "generation-iv",
+            "generation-v",
+            "generation-vi",
+            "generation-vii",
+            "generation-viii"
+          ]
+        }
+      },
+      "required": [
+        "back_default",
+        "back_female",
+        "back_shiny",
+        "back_shiny_female",
+        "front_default",
+        "front_female",
+        "front_shiny",
+        "front_shiny_female",
+        "other",
+        "versions"
+      ]
+    },
+    "cries": {
+      "type": "object",
+      "properties": {
+        "latest": {
+          "type": "string"
+        },
+        "legacy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "latest",
+        "legacy"
+      ]
+    },
+    "stats": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "base_stat": {
+              "type": "integer"
+            },
+            "effort": {
+              "type": "integer"
+            },
+            "stat": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            }
+          },
+          "required": [
+            "base_stat",
+            "effort",
+            "stat"
+          ]
+        }
+      ]
+    },
+    "types": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "slot": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            }
+          },
+          "required": [
+            "slot",
+            "type"
+          ]
+        }
+      ]
+    },
+    "past_types": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "generation": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            },
+            "types": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "slot": {
+                      "type": "integer"
+                    },
+                    "type": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "url"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "slot",
+                    "type"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "generation",
+            "types"
+          ]
+        }
+      ]
+    },
+    "past_abilities": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "generation": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ]
+            },
+            "abilities": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ability": {
+                      "type": "null"
+                    },
+                    "is_hidden": {
+                      "type": "boolean"
+                    },
+                    "slot": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "ability",
+                    "is_hidden",
+                    "slot"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "generation",
+            "abilities"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "base_experience",
+    "height",
+    "is_default",
+    "order",
+    "weight",
+    "abilities",
+    "forms",
+    "game_indices",
+    "held_items",
+    "location_area_encounters",
+    "moves",
+    "species",
+    "sprites",
+    "cries",
+    "stats",
+    "types",
+    "past_types",
+    "past_abilities"
+  ]
+}
