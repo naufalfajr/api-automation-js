@@ -19,13 +19,14 @@ describe('Pokemon API Tests', () => {
       const startTime = Date.now();
       const validData = TestData.validPokemonData();
 
-      const response = await apiClient.get(`/api/v2/berry/${validData.id}`);
+      const response = await apiClient.get(`/api/v2/pokemon/${validData.id}`);
       
       assertions.validateStatusCode(response, 200);
       assertions.validateResponseTime(startTime);
-      // assertions.validateSchema(response, schema);
+      assertions.validateSchema(response, schema);
       expect(response.data).to.have.property('id');
       expect(response.data.name).to.equal(validData.name);
+      expect(response.data.order).to.equal(validData.order);
 
       pokemonId = response.data.id;
     });
@@ -37,7 +38,6 @@ describe('Pokemon API Tests', () => {
         await apiClient.get(`/api/v2/pokemon/${invalidData.id}`);
         expect.fail('Should have thrown an error');
       } catch (error) {
-        console.log(`error response: ${JSON.stringify(error.response)}`);
         assertions.validateStatusCode(error.response, 404);
       }
     });

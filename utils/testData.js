@@ -1,9 +1,9 @@
 class TestData {
   static validPokemonData() {
     return {
-      name: "cheri",
+      name: "grimer",
       order: 141,
-      id: 1
+      id: 88
     };
   }
 

@@ -1,388 +1,402 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "integer"
-    },
-    "name": {
-      "type": "string"
-    },
-    "base_experience": {
-      "type": "integer"
-    },
-    "height": {
-      "type": "integer"
-    },
-    "is_default": {
-      "type": "boolean"
-    },
-    "order": {
-      "type": "integer"
-    },
-    "weight": {
-      "type": "integer"
-    },
-    "abilities": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "is_hidden": {
-              "type": "boolean"
-            },
-            "slot": {
-              "type": "integer"
-            },
-            "ability": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name",
-                "url"
-              ]
-            }
-          },
-          "required": [
-            "is_hidden",
-            "slot",
-            "ability"
-          ]
-        }
-      ]
-    },
-    "forms": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "url": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "name",
-            "url"
-          ]
-        }
-      ]
-    },
-    "game_indices": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "game_index": {
-              "type": "integer"
-            },
-            "version": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name",
-                "url"
-              ]
-            }
-          },
-          "required": [
-            "game_index",
-            "version"
-          ]
-        }
-      ]
-    },
-    "held_items": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "item": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name",
-                "url"
-              ]
-            },
-            "version_details": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "rarity": {
-                      "type": "integer"
-                    },
-                    "version": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "url": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "url"
-                      ]
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome1",
+    "definitions": {
+        "Welcome1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "abilities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Ability"
                     }
-                  },
-                  "required": [
-                    "rarity",
-                    "version"
-                  ]
-                }
-              ]
-            }
-          },
-          "required": [
-            "item",
-            "version_details"
-          ]
-        }
-      ]
-    },
-    "location_area_encounters": {
-      "type": "string"
-    },
-    "moves": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "move": {
-              "type": "object",
-              "properties": {
+                },
+                "base_experience": {
+                    "type": "integer"
+                },
+                "cries": {
+                    "$ref": "#/definitions/Cries"
+                },
+                "forms": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Species"
+                    }
+                },
+                "game_indices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GameIndex"
+                    }
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "held_items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HeldItem"
+                    }
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "is_default": {
+                    "type": "boolean"
+                },
+                "location_area_encounters": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "moves": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Move"
+                    }
+                },
                 "name": {
-                  "type": "string"
+                    "type": "string"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "past_abilities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PastAbility"
+                    }
+                },
+                "past_types": {
+                    "type": "array",
+                    "items": {}
+                },
+                "species": {
+                    "$ref": "#/definitions/Species"
+                },
+                "sprites": {
+                    "$ref": "#/definitions/Sprites"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                },
+                "types": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Type"
+                    }
+                },
+                "weight": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "abilities",
+                "base_experience",
+                "cries",
+                "forms",
+                "game_indices",
+                "height",
+                "held_items",
+                "id",
+                "is_default",
+                "location_area_encounters",
+                "moves",
+                "name",
+                "order",
+                "past_abilities",
+                "past_types",
+                "species",
+                "sprites",
+                "stats",
+                "types",
+                "weight"
+            ],
+            "title": "Welcome1"
+        },
+        "Ability": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ability": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Species"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "is_hidden": {
+                    "type": "boolean"
+                },
+                "slot": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "ability",
+                "is_hidden",
+                "slot"
+            ],
+            "title": "Ability"
+        },
+        "Species": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
                 },
                 "url": {
-                  "type": "string"
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "name",
                 "url"
-              ]
+            ],
+            "title": "Species"
+        },
+        "Cries": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "latest": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".ogg"
+                    ]
+                },
+                "legacy": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".ogg"
+                    ]
+                }
             },
-            "version_group_details": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "level_learned_at": {
-                      "type": "integer"
-                    },
-                    "version_group": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "url": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "url"
-                      ]
-                    },
-                    "move_learn_method": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "url": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "url"
-                      ]
-                    },
-                    "order": {
-                      "type": "integer"
+            "required": [
+                "latest",
+                "legacy"
+            ],
+            "title": "Cries"
+        },
+        "GameIndex": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "game_index": {
+                    "type": "integer"
+                },
+                "version": {
+                    "$ref": "#/definitions/Species"
+                }
+            },
+            "required": [
+                "game_index",
+                "version"
+            ],
+            "title": "GameIndex"
+        },
+        "HeldItem": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "item": {
+                    "$ref": "#/definitions/Species"
+                },
+                "version_details": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VersionDetail"
                     }
-                  },
-                  "required": [
-                    "level_learned_at",
-                    "version_group",
-                    "move_learn_method",
-                    "order"
-                  ]
                 }
-              ]
-            }
-          },
-          "required": [
-            "move",
-            "version_group_details"
-          ]
-        }
-      ]
-    },
-    "species": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "name",
-        "url"
-      ]
-    },
-    "sprites": {
-      "type": "object",
-      "properties": {
-        "back_default": {
-          "type": "string"
-        },
-        "back_female": {
-          "type": "null"
-        },
-        "back_shiny": {
-          "type": "string"
-        },
-        "back_shiny_female": {
-          "type": "null"
-        },
-        "front_default": {
-          "type": "string"
-        },
-        "front_female": {
-          "type": "null"
-        },
-        "front_shiny": {
-          "type": "string"
-        },
-        "front_shiny_female": {
-          "type": "null"
-        },
-        "other": {
-          "type": "object",
-          "properties": {
-            "dream_world": {
-              "type": "object",
-              "properties": {
-                "front_default": {
-                  "type": "string"
-                },
-                "front_female": {
-                  "type": "null"
-                }
-              },
-              "required": [
-                "front_default",
-                "front_female"
-              ]
             },
-            "home": {
-              "type": "object",
-              "properties": {
-                "front_default": {
-                  "type": "string"
+            "required": [
+                "item",
+                "version_details"
+            ],
+            "title": "HeldItem"
+        },
+        "VersionDetail": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rarity": {
+                    "type": "integer"
                 },
-                "front_female": {
-                  "type": "null"
-                },
-                "front_shiny": {
-                  "type": "string"
-                },
-                "front_shiny_female": {
-                  "type": "null"
+                "version": {
+                    "$ref": "#/definitions/Species"
                 }
-              },
-              "required": [
-                "front_default",
-                "front_female",
-                "front_shiny",
-                "front_shiny_female"
-              ]
             },
-            "official-artwork": {
-              "type": "object",
-              "properties": {
-                "front_default": {
-                  "type": "string"
+            "required": [
+                "rarity",
+                "version"
+            ],
+            "title": "VersionDetail"
+        },
+        "Move": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "move": {
+                    "$ref": "#/definitions/Species"
                 },
-                "front_shiny": {
-                  "type": "string"
+                "version_group_details": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VersionGroupDetail"
+                    }
                 }
-              },
-              "required": [
-                "front_default",
-                "front_shiny"
-              ]
             },
-            "showdown": {
-              "type": "object",
-              "properties": {
+            "required": [
+                "move",
+                "version_group_details"
+            ],
+            "title": "Move"
+        },
+        "VersionGroupDetail": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "level_learned_at": {
+                    "type": "integer"
+                },
+                "move_learn_method": {
+                    "$ref": "#/definitions/Species"
+                },
+                "order": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "version_group": {
+                    "$ref": "#/definitions/Species"
+                }
+            },
+            "required": [
+                "level_learned_at",
+                "move_learn_method",
+                "order",
+                "version_group"
+            ],
+            "title": "VersionGroupDetail"
+        },
+        "PastAbility": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "abilities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Ability"
+                    }
+                },
+                "generation": {
+                    "$ref": "#/definitions/Species"
+                }
+            },
+            "required": [
+                "abilities",
+                "generation"
+            ],
+            "title": "PastAbility"
+        },
+        "Sprites": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
                 "back_default": {
-                  "type": "string"
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".gif",
+                        ".png"
+                    ]
                 },
                 "back_female": {
-                  "type": "null"
+                    "type": "null"
                 },
                 "back_shiny": {
-                  "type": "string"
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".gif",
+                        ".png"
+                    ]
                 },
                 "back_shiny_female": {
-                  "type": "null"
+                    "type": "null"
                 },
                 "front_default": {
-                  "type": "string"
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".gif",
+                        ".png"
+                    ]
                 },
                 "front_female": {
-                  "type": "null"
+                    "type": "null"
                 },
                 "front_shiny": {
-                  "type": "string"
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".gif",
+                        ".png"
+                    ]
                 },
                 "front_shiny_female": {
-                  "type": "null"
+                    "type": "null"
+                },
+                "other": {
+                    "$ref": "#/definitions/Other"
+                },
+                "versions": {
+                    "$ref": "#/definitions/Versions"
+                },
+                "animated": {
+                    "$ref": "#/definitions/Sprites"
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "back_default",
                 "back_female",
                 "back_shiny",
@@ -391,807 +405,568 @@
                 "front_female",
                 "front_shiny",
                 "front_shiny_female"
-              ]
-            }
-          },
-          "required": [
-            "dream_world",
-            "home",
-            "official-artwork",
-            "showdown"
-          ]
+            ],
+            "title": "Sprites"
         },
-        "versions": {
-          "type": "object",
-          "properties": {
-            "generation-i": {
-              "type": "object",
-              "properties": {
-                "red-blue": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_gray": {
-                      "type": "string"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_gray": {
-                      "type": "string"
+        "Other": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dream_world": {
+                    "$ref": "#/definitions/DreamWorld"
+                },
+                "home": {
+                    "$ref": "#/definitions/Home"
+                },
+                "official-artwork": {
+                    "$ref": "#/definitions/OfficialArtwork"
+                },
+                "showdown": {
+                    "$ref": "#/definitions/Sprites"
+                }
+            },
+            "required": [
+                "dream_world",
+                "home",
+                "official-artwork",
+                "showdown"
+            ],
+            "title": "Other"
+        },
+        "DreamWorld": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "front_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png",
+                        ".svg"
+                    ]
+                },
+                "front_female": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "front_default",
+                "front_female"
+            ],
+            "title": "DreamWorld"
+        },
+        "OfficialArtwork": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "front_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_shiny": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                }
+            },
+            "required": [
+                "front_default",
+                "front_shiny"
+            ],
+            "title": "OfficialArtwork"
+        },
+        "Versions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "generation-i": {
+                    "$ref": "#/definitions/GenerationI"
+                },
+                "generation-ii": {
+                    "$ref": "#/definitions/GenerationIi"
+                },
+                "generation-iii": {
+                    "$ref": "#/definitions/GenerationIii"
+                },
+                "generation-iv": {
+                    "$ref": "#/definitions/GenerationIv"
+                },
+                "generation-v": {
+                    "$ref": "#/definitions/GenerationV"
+                },
+                "generation-vi": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/Home"
                     }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_gray",
-                    "front_default",
-                    "front_gray"
-                  ]
+                },
+                "generation-vii": {
+                    "$ref": "#/definitions/GenerationVii"
+                },
+                "generation-viii": {
+                    "$ref": "#/definitions/GenerationViii"
+                }
+            },
+            "required": [
+                "generation-i",
+                "generation-ii",
+                "generation-iii",
+                "generation-iv",
+                "generation-v",
+                "generation-vi",
+                "generation-vii",
+                "generation-viii"
+            ],
+            "title": "Versions"
+        },
+        "GenerationI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "red-blue": {
+                    "$ref": "#/definitions/RedBlue"
                 },
                 "yellow": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_gray": {
-                      "type": "string"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_gray": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_gray",
-                    "front_default",
-                    "front_gray"
-                  ]
+                    "$ref": "#/definitions/RedBlue"
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "red-blue",
                 "yellow"
-              ]
+            ],
+            "title": "GenerationI"
+        },
+        "RedBlue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "back_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "back_gray": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "back_transparent": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_gray": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_transparent": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                }
             },
-            "generation-ii": {
-              "type": "object",
-              "properties": {
+            "required": [
+                "back_default",
+                "back_gray",
+                "back_transparent",
+                "front_default",
+                "front_gray",
+                "front_transparent"
+            ],
+            "title": "RedBlue"
+        },
+        "GenerationIi": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
                 "crystal": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_shiny",
-                    "front_default",
-                    "front_shiny"
-                  ]
+                    "$ref": "#/definitions/Crystal"
                 },
                 "gold": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_shiny",
-                    "front_default",
-                    "front_shiny"
-                  ]
+                    "$ref": "#/definitions/Gold"
                 },
                 "silver": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_shiny",
-                    "front_default",
-                    "front_shiny"
-                  ]
+                    "$ref": "#/definitions/Gold"
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "crystal",
                 "gold",
                 "silver"
-              ]
+            ],
+            "title": "GenerationIi"
+        },
+        "Crystal": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "back_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "back_shiny": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "back_shiny_transparent": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "back_transparent": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_shiny": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_shiny_transparent": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_transparent": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                }
             },
-            "generation-iii": {
-              "type": "object",
-              "properties": {
+            "required": [
+                "back_default",
+                "back_shiny",
+                "back_shiny_transparent",
+                "back_transparent",
+                "front_default",
+                "front_shiny",
+                "front_shiny_transparent",
+                "front_transparent"
+            ],
+            "title": "Crystal"
+        },
+        "Gold": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "back_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "back_shiny": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_shiny": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_transparent": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                }
+            },
+            "required": [
+                "back_default",
+                "back_shiny",
+                "front_default",
+                "front_shiny"
+            ],
+            "title": "Gold"
+        },
+        "GenerationIii": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
                 "emerald": {
-                  "type": "object",
-                  "properties": {
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "front_default",
-                    "front_shiny"
-                  ]
+                    "$ref": "#/definitions/OfficialArtwork"
                 },
                 "firered-leafgreen": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_shiny",
-                    "front_default",
-                    "front_shiny"
-                  ]
+                    "$ref": "#/definitions/Gold"
                 },
                 "ruby-sapphire": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_shiny",
-                    "front_default",
-                    "front_shiny"
-                  ]
+                    "$ref": "#/definitions/Gold"
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "emerald",
                 "firered-leafgreen",
                 "ruby-sapphire"
-              ]
-            },
-            "generation-iv": {
-              "type": "object",
-              "properties": {
+            ],
+            "title": "GenerationIii"
+        },
+        "GenerationIv": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
                 "diamond-pearl": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_female": {
-                      "type": "null"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "back_shiny_female": {
-                      "type": "null"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    },
-                    "front_shiny_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_female",
-                    "back_shiny",
-                    "back_shiny_female",
-                    "front_default",
-                    "front_female",
-                    "front_shiny",
-                    "front_shiny_female"
-                  ]
+                    "$ref": "#/definitions/Sprites"
                 },
                 "heartgold-soulsilver": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_female": {
-                      "type": "null"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "back_shiny_female": {
-                      "type": "null"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    },
-                    "front_shiny_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_female",
-                    "back_shiny",
-                    "back_shiny_female",
-                    "front_default",
-                    "front_female",
-                    "front_shiny",
-                    "front_shiny_female"
-                  ]
+                    "$ref": "#/definitions/Sprites"
                 },
                 "platinum": {
-                  "type": "object",
-                  "properties": {
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_female": {
-                      "type": "null"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "back_shiny_female": {
-                      "type": "null"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    },
-                    "front_shiny_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "back_default",
-                    "back_female",
-                    "back_shiny",
-                    "back_shiny_female",
-                    "front_default",
-                    "front_female",
-                    "front_shiny",
-                    "front_shiny_female"
-                  ]
+                    "$ref": "#/definitions/Sprites"
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "diamond-pearl",
                 "heartgold-soulsilver",
                 "platinum"
-              ]
-            },
-            "generation-v": {
-              "type": "object",
-              "properties": {
+            ],
+            "title": "GenerationIv"
+        },
+        "GenerationV": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
                 "black-white": {
-                  "type": "object",
-                  "properties": {
-                    "animated": {
-                      "type": "object",
-                      "properties": {
-                        "back_default": {
-                          "type": "string"
-                        },
-                        "back_female": {
-                          "type": "null"
-                        },
-                        "back_shiny": {
-                          "type": "string"
-                        },
-                        "back_shiny_female": {
-                          "type": "null"
-                        },
-                        "front_default": {
-                          "type": "string"
-                        },
-                        "front_female": {
-                          "type": "null"
-                        },
-                        "front_shiny": {
-                          "type": "string"
-                        },
-                        "front_shiny_female": {
-                          "type": "null"
-                        }
-                      },
-                      "required": [
-                        "back_default",
-                        "back_female",
-                        "back_shiny",
-                        "back_shiny_female",
-                        "front_default",
-                        "front_female",
-                        "front_shiny",
-                        "front_shiny_female"
-                      ]
-                    },
-                    "back_default": {
-                      "type": "string"
-                    },
-                    "back_female": {
-                      "type": "null"
-                    },
-                    "back_shiny": {
-                      "type": "string"
-                    },
-                    "back_shiny_female": {
-                      "type": "null"
-                    },
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    },
-                    "front_shiny_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "animated",
-                    "back_default",
-                    "back_female",
-                    "back_shiny",
-                    "back_shiny_female",
-                    "front_default",
-                    "front_female",
-                    "front_shiny",
-                    "front_shiny_female"
-                  ]
+                    "$ref": "#/definitions/Sprites"
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "black-white"
-              ]
-            },
-            "generation-vi": {
-              "type": "object",
-              "properties": {
-                "omegaruby-alphasapphire": {
-                  "type": "object",
-                  "properties": {
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    },
-                    "front_shiny_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "front_default",
-                    "front_female",
-                    "front_shiny",
-                    "front_shiny_female"
-                  ]
+            ],
+            "title": "GenerationV"
+        },
+        "Home": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "front_default": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
                 },
-                "x-y": {
-                  "type": "object",
-                  "properties": {
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    },
-                    "front_shiny_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "front_default",
-                    "front_female",
-                    "front_shiny",
-                    "front_shiny_female"
-                  ]
+                "front_female": {
+                    "type": "null"
+                },
+                "front_shiny": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "front_shiny_female": {
+                    "type": "null"
                 }
-              },
-              "required": [
-                "omegaruby-alphasapphire",
-                "x-y"
-              ]
             },
-            "generation-vii": {
-              "type": "object",
-              "properties": {
+            "required": [
+                "front_default",
+                "front_female",
+                "front_shiny",
+                "front_shiny_female"
+            ],
+            "title": "Home"
+        },
+        "GenerationVii": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
                 "icons": {
-                  "type": "object",
-                  "properties": {
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "front_default",
-                    "front_female"
-                  ]
+                    "$ref": "#/definitions/DreamWorld"
                 },
                 "ultra-sun-ultra-moon": {
-                  "type": "object",
-                  "properties": {
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    },
-                    "front_shiny": {
-                      "type": "string"
-                    },
-                    "front_shiny_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "front_default",
-                    "front_female",
-                    "front_shiny",
-                    "front_shiny_female"
-                  ]
+                    "$ref": "#/definitions/Home"
                 }
-              },
-              "required": [
+            },
+            "required": [
                 "icons",
                 "ultra-sun-ultra-moon"
-              ]
-            },
-            "generation-viii": {
-              "type": "object",
-              "properties": {
-                "icons": {
-                  "type": "object",
-                  "properties": {
-                    "front_default": {
-                      "type": "string"
-                    },
-                    "front_female": {
-                      "type": "null"
-                    }
-                  },
-                  "required": [
-                    "front_default",
-                    "front_female"
-                  ]
-                }
-              },
-              "required": [
-                "icons"
-              ]
-            }
-          },
-          "required": [
-            "generation-i",
-            "generation-ii",
-            "generation-iii",
-            "generation-iv",
-            "generation-v",
-            "generation-vi",
-            "generation-vii",
-            "generation-viii"
-          ]
-        }
-      },
-      "required": [
-        "back_default",
-        "back_female",
-        "back_shiny",
-        "back_shiny_female",
-        "front_default",
-        "front_female",
-        "front_shiny",
-        "front_shiny_female",
-        "other",
-        "versions"
-      ]
-    },
-    "cries": {
-      "type": "object",
-      "properties": {
-        "latest": {
-          "type": "string"
+            ],
+            "title": "GenerationVii"
         },
-        "legacy": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "latest",
-        "legacy"
-      ]
-    },
-    "stats": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "base_stat": {
-              "type": "integer"
+        "GenerationViii": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "icons": {
+                    "$ref": "#/definitions/DreamWorld"
+                }
             },
-            "effort": {
-              "type": "integer"
-            },
-            "stat": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
+            "required": [
+                "icons"
+            ],
+            "title": "GenerationViii"
+        },
+        "Stat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "base_stat": {
+                    "type": "integer"
                 },
-                "url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name",
-                "url"
-              ]
-            }
-          },
-          "required": [
-            "base_stat",
-            "effort",
-            "stat"
-          ]
-        }
-      ]
-    },
-    "types": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "slot": {
-              "type": "integer"
-            },
-            "type": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
+                "effort": {
+                    "type": "integer"
                 },
-                "url": {
-                  "type": "string"
+                "stat": {
+                    "$ref": "#/definitions/Species"
                 }
-              },
-              "required": [
-                "name",
-                "url"
-              ]
-            }
-          },
-          "required": [
-            "slot",
-            "type"
-          ]
-        }
-      ]
-    },
-    "past_types": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "generation": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name",
-                "url"
-              ]
             },
-            "types": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "slot": {
-                      "type": "integer"
-                    },
-                    "type": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "url": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "url"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "slot",
-                    "type"
-                  ]
-                }
-              ]
-            }
-          },
-          "required": [
-            "generation",
-            "types"
-          ]
-        }
-      ]
-    },
-    "past_abilities": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "generation": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
+            "required": [
+                "base_stat",
+                "effort",
+                "stat"
+            ],
+            "title": "Stat"
+        },
+        "Type": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "slot": {
+                    "type": "integer"
                 },
-                "url": {
-                  "type": "string"
+                "type": {
+                    "$ref": "#/definitions/Species"
                 }
-              },
-              "required": [
-                "name",
-                "url"
-              ]
             },
-            "abilities": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "ability": {
-                      "type": "null"
-                    },
-                    "is_hidden": {
-                      "type": "boolean"
-                    },
-                    "slot": {
-                      "type": "integer"
-                    }
-                  },
-                  "required": [
-                    "ability",
-                    "is_hidden",
-                    "slot"
-                  ]
-                }
-              ]
-            }
-          },
-          "required": [
-            "generation",
-            "abilities"
-          ]
+            "required": [
+                "slot",
+                "type"
+            ],
+            "title": "Type"
         }
-      ]
     }
-  },
-  "required": [
-    "id",
-    "name",
-    "base_experience",
-    "height",
-    "is_default",
-    "order",
-    "weight",
-    "abilities",
-    "forms",
-    "game_indices",
-    "held_items",
-    "location_area_encounters",
-    "moves",
-    "species",
-    "sprites",
-    "cries",
-    "stats",
-    "types",
-    "past_types",
-    "past_abilities"
-  ]
 }
