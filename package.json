@@ -4,8 +4,8 @@
   "description": "API automation testing with Mocha",
   "scripts": {
     "test": "mocha tests/**/*.test.js --timeout 10000",
-    "test:watch": "mocha test/**/*.test.js --watch",
-    "test:report": "mocha test/**/*.test.js --reporter mochawesome"
+    "test:watch": "mocha tests/**/*.test.js --watch",
+    "test:report": "mocha tests/**/*.test.js --reporter mochawesome"
   },
   "dependencies": {
     "ajv": "^8.12.0",

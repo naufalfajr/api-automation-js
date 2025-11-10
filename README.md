@@ -22,9 +22,9 @@
 
 ## Available Scripts
 
-- npm test              - Run all tests
-- npm run test:watch    - Run tests in watch mode
-- npm run test:report   - Generate HTML report
+- `npm test`              - Run all tests
+- `npm run test:watch`    - Run tests in watch mode
+- `npm run test:report`   - Generate HTML report
 
 ## Writing Tests
 
